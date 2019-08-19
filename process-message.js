@@ -1,23 +1,24 @@
 const Dialogflow = require('dialogflow');
     const Pusher = require('pusher');
 
-    // You can find your project ID in your Dialogflow agent settings
-    const projectId = '<your project id>'; //https://dialogflow.com/docs/agents#settings
+    const { DIALOGFLOW_PRIVATE_KEY, DIALOGFLOW_CLIENT_EMAIL, PUSHER_APP_CLUSTER, PUSHER_APP_ID, PUSHER_APP_KEY, PUSHER_APP_SECRET } = process.env
+
+    const projectId = 'apa-citation-bot-wcnox'; 
     const sessionId = '123456';
     const languageCode = 'en-US';
 
     const config = {
       credentials: {
-        private_key: process.env.DIALOGFLOW_PRIVATE_KEY,
-        client_email: process.env.DIALOGFLOW_CLIENT_EMAIL,
+        private_key: DIALOGFLOW_PRIVATE_KEY,
+        client_email: DIALOGFLOW_CLIENT_EMAIL,
       },
     };
 
     const pusher = new Pusher({
-      appId: process.env.PUSHER_APP_ID,
-      key: process.env.PUSHER_APP_KEY,
-      secret: process.env.PUSHER_APP_SECRET,
-      cluster: process.env.PUSHER_APP_CLUSTER,
+      appId: PUSHER_APP_ID,
+      key: PUSHER_APP_KEY,
+      secret: PUSHER_APP_SECRET,
+      cluster: PUSHER_APP_CLUSTER,
       encrypted: true,
     });
 
