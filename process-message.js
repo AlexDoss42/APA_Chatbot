@@ -3,6 +3,9 @@ const Dialogflow = require('dialogflow');
 
     const { DIALOGFLOW_PRIVATE_KEY, DIALOGFLOW_CLIENT_EMAIL, PUSHER_APP_CLUSTER, PUSHER_APP_ID, PUSHER_APP_KEY, PUSHER_APP_SECRET } = process.env
 
+    console.log("APP KEY: ", PUSHER_APP_KEY)
+    console.log("APP CLUSTER: ", PUSHER_APP_CLUSTER)
+
     const projectId = 'apa-citation-bot-wcnox'; 
     const sessionId = '123456';
     const languageCode = 'en-US';
